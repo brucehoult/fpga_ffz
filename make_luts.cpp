@@ -59,8 +59,8 @@ ffz_layer_result make_ffz_layers(int depth, int first_input){
     res.bitNum[numForwardBits]   = zeroPos0;
     res.bitNum[numForwardBits+1] = zeroPos1;
     emitLUT(allOnes, "AllSet4", in[0], in[1], in[2], in[3], DONTCARE, DONTCARE);
-    emitLUT(zeroPos0, "FFZ4_0", in[0], in[1], in[2], in[3], DONTCARE, DONTCARE);
     emitLUT(zeroPos1, "FFZ4_1", in[0], in[1], in[2], in[3], DONTCARE, DONTCARE);
+    emitLUT(zeroPos0, "FFZ4_0", in[0], in[1], in[2], in[3], DONTCARE, DONTCARE);
     for (int i=numForwardBits-1; i>=0; --i){
         wire muxout = nextWire++;
         res.bitNum[i] = muxout;
