@@ -3,14 +3,16 @@ What is it?
 
 This program is a quick and dirty hack meant to solve the problem posed at http://www.eevblog.com/forum/microcontrollers/hdl-problem-first-bit-equal-to-zero-and-set-it-to-one/
 
----
-so, you have a vector of 1024 bit (it might be 4x bigger), they are initially all zero, and sometimes, inside a process, you need to find the lower bit set to zero, and once found you need to set it to one.
+> so, you have a vector of 1024 bit (it might be 4x bigger), they are initially all zero,
+> and sometimes, inside a process, you need to find the lower bit set to zero, and once
+> found you need to set it to one.
+> 
+> It's like find the first bit equal to zero, and set it to one so it will be skipped on
+> future searches.
+> 
+> it's 1024 bit, how could you implement it in a decent way? 
+> As a giant circuit made on the cascade of "IF" vector(x) branches ?  ￼
 
-It's like find the first bit equal to zero, and set it to one so it will be skipped on future searches.
-
-it's 1024 bit, how could you implement it in a decent way? 
-As a giant circuit made on the cascade of "IF" vector(x) branches ?  ￼
----
 
 Instructions
 =====
@@ -24,3 +26,5 @@ I get 1247 LUTs, of which 224 are 6 input LUTs used as 4:1 muxes. The other 1023
 In theory you could cover 1024 inputs with 4 layers of 6-input LUTs, but presumably you want the output of the location of the first zero in binary, not some wacky form. It's only 5 layers with 4-input LUTs.
 
 The output of whether there is a zero of not is available in 5 LUT delays and the location of the first zero in 6 LUT delays.
+
+This code doesn't actually modify the zero to a one. I've assumed that you already have circuitry for modifying a bit by bit number. Adding it here would require essentially the same number of LUTs as a general facility.
