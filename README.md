@@ -1,4 +1,4 @@
-Program inspired by http://www.eevblog.com/forum/microcontrollers/hdl-problem-first-bit-equal-to-zero-and-set-it-to-one
+Program inspired by http://www.eevblog.com/forum/microcontrollers/hdl-problem-first-bit-equal-to-zero-and-set-it-to-one/
 
 so, you have a vector of 1024 bit (it might be 4x bigger), they are initially all zero, and sometimes, inside a process, you need to find the lower bit set to zero, and once found you need to set it to one.
 
